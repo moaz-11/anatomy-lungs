@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video about lung anatomy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        #main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .video-container {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 800px;
+        }
+        video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .upload-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .upload-section input[type="file"] {
+            margin-top: 10px;
+        }
+        footer {
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Video about lung anatomy</h1>
+    </header>
+    <div id="main-content">
+        <div class="video-container">
+            <video id="videoPlayer" controls>
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="upload-section">
+            <h2>Upload a Video</h2>
+            <input type="file" id="videoUploader" accept="video/*">
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Video Platform. All rights reserved.</p>
+    </footer>
+    <script>
+        const videoUploader = document.getElementById('videoUploader');
+        const videoPlayer = document.getElementById('videoPlayer');
+
+        videoUploader.addEventListener('change', function () {
+            const file = this.files[0];
+            if (file) {
+                const videoURL = URL.createObjectURL(file);
+                videoPlayer.src = videoURL;
+            }
+        });
+    </script>
+</body>
+</html>
